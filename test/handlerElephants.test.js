@@ -14,7 +14,15 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
   });
 
-  it('Verifica se o retorno de HandlerElephants é uma string', () => {
-    expect(handlerElephants('13')).toBe('string');
+  it('Verifica se ao receber count retorna a quantidade de elefantes', () => {
+    expect(handlerElephants('count')).toEqual(4);
+  });
+
+  it('Verifica se ao receber names como parâmetro retorna um array', () => {
+    expect(Array.isArray(handlerElephants('names'))).toBe(true);
+  });
+
+  it('Verifica se ao receber averageAge como parâmetro retorna a média de idade', () => {
+    expect(handlerElephants('averageAge')).toBeCloseTo(10.5);
   });
 });
