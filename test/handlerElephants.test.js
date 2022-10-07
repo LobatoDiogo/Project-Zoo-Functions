@@ -23,6 +23,15 @@ describe('Testes da função HandlerElephants', () => {
   });
 
   it('Verifica se ao receber averageAge como parâmetro retorna a média de idade', () => {
-    expect(handlerElephants('averageAge')).toBeCloseTo(10.5);
+    expect(handlerElephants('averageAge')).toBe(10.5);
+  });
+
+  it('Verifica se ao receber um argumento em string inválido retorna null', () => {
+    const actual = handlerElephants('string inválida');
+    expect(actual).toBeNull();
+  });
+
+  it('Verifica se ao receber o argumento popularity retorna um número maior ou igual a 5', () => {
+    expect(handlerElephants('popularity')).toEqual(5);
   });
 });
